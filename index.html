@@ -20,19 +20,43 @@
   </head>
   <body>
     <main id="main">
-      <div id="errors"></div>
+      <input type="text" id="searchTerms">
+      <a href="#" id="searchRepos">Search</a>  
+      
     </main>
-    <div class="flexbox-container">
+    <div id="errors"></div>
+    <div class="flexbox-container">  
       <div>
-        <h3>Repositories</h3>
+        <h1>Repositories</h1>
         <div id="results"></div>
       </div>
       <div>
-        <h3>Details</h3>
+        <h1>Details</h1>
         <div id="details"></div>
       </div>
     </div>
+    <script id="repository-template" type="text/x-handlebars-template">
+      {{#each items}}
+        <h4>{{name}}</h4>
+        <p>{{description}}</p>
+        <a href="{{html_url}}">Link to Repo</a><br>
+        <img width="100px" height="100px" src="{{owner.avatar_url}}" /><br>
+        <a href="{{owner.html_url}}">Link to User's Profile</a>
+        <a href="#" class="commit-link" data-owner="{{owner.login}}" data-repo="{{name}}">Show Commits</a>
+      {{/each}}
+    </script>
+    <script id="commit-template" type="text/x-handlebars-template">
+      {{#each this}}
+        <h4>SHA:{{sha}}</h4>
+        <p>Author{{author.login}}</p>
+        <img width="100px" height="100px" src="{{author.avatar_url}}" />
+      {{/each}}
+    </script>
+    <script id="error-template" type="text/x-handlebars-template">
+      <h4>ERROR: {{this.responseJSON.message}} -- {{this.responseJSON.documentation_url}}</h4>
+    </script>
     <script src="jquery-3.1.0.min.js"></script>
+    <script src="handlebars.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
