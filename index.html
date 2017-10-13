@@ -21,6 +21,8 @@
   <body>
     <main id="main">
       <div id="errors"></div>
+      <input id="searchTerms" name="searchTerms">
+      <a href="#"  id="ser">Search Repositories</a>
     </main>
     <div class="flexbox-container">
       <div>
@@ -32,7 +34,45 @@
         <div id="details"></div>
       </div>
     </div>
-    <script src="jquery-3.1.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js" type="text/javascript">
+
+    </script>
+    <script src="handlebars.js" type="text/javascript">
+
+    </script>
+    <script id="repo-template" type="text/x-handlebars-template">
+      <div class="repoResults">
+
+         <ul>
+           {{#each this}}
+           <li>Repo Name: {{name}}</li>
+           <li>Description: {{description}}</li>
+           <li><a  href="{{html_url}}">Repo Link</a> </li>
+           <li><a href="#" data-repo="{{name}}" data-owner="{{owner.login}}"  onclick="showCommits(this);">Commits</a></li>
+           <li>Owner: {{owner.login}}</li>
+           <img src="{{owner.avatar_url}}" height="50px" width="50px">
+           <li><a href="{{owner.html_url}}">Go to Profile</a></li>
+           <hr>
+           {{/each}}
+         </ul>
+      </div>
+    </script>
+
+    <script  id="commit-template" type="text/x-handlebars-template">
+      <ul>
+        {{#each this}}
+          <li>SHA:{{sha}} </li>
+          <li>Author: {{author.login}}</li>
+           <li><img src="{{author.avatar_url}}" width="50px" height="50px"></li>
+        {{/each}}
+
+      </ul>
+    </script>
+
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
     <script src="index.js"></script>
   </body>
 </html>
