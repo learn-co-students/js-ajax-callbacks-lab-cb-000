@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ajax Lab</title>
+    <title>Github Repo Search</title>
 
     <style>
       .flexbox-container {
@@ -17,10 +17,13 @@
         margin-right: 20px;
       }
     </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js" integrity="sha256-+JMHsXRyeTsws/tzbIh5YHQxRdKCuNjmvNcTFtY6DLc=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
   </head>
   <body>
     <main id="main">
-      <form onsubmit="searchRepositories()">
+      <form onsubmit="searchRepositories(event)"> <!-- add the event variable to the function -->
         <input type="text" id="searchTerms" value="tetris" required>
         <input type="submit" value="Search Repositories">
       </form>
@@ -29,33 +32,30 @@
     <div class="flexbox-container">
       <div>
         <h3>Repositories</h3>
-        <div id="results"></div>
+        <div id="results">
+
+          <script id="repositories-template" type="text/x-handlebars-template">
+            <ul>
+              {{#each this.items}}  <!-- this.items does include the repositories -->
+              <li>
+                <h4>Name: {{name}}</h4>
+                <p>Description: {{description}}</p>
+                <p><a href="{{html_url}}">View on Github<a></p>
+                <p>Owner Login: {{owner.login}}</p>
+                <!-- owner profile image  owner.avatar_url -->
+                <p><a href="{{owner.html_url}}">View Owner's Github Profile<a></p>
+                <p><a href="#" onclick="searchCommits()" data-url="{{url}}">Show Commits<a></p>
+              </li>
+              {{/each}}
+            </ul>
+          </script>
+
+        </div>
       </div>
       <div>
         <h3>Details</h3>
         <div id="details"></div>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js" type="text/javascript"></script>
-     <script id="repositories-template" type="text/x-handlebars-template">
-       <ul>
-         {{#each this}}
-         <li>
-           <h4>Name: {{name}}</h4>
-           <p>Description: {{description}}</p>
-           <p><a href="{{html_url}}">View on Github<a></p>
-           <p>Owner Login: {{owner.login}}</p>
-           <!-- owner profile image  owner.avatar_url -->
-           <p><a href="{{owner.html_url}}">View Owner's Github Profile<a></p>
-           <p><a href="#" onclick="searchCommits()" data-url="{{url}}">Show Commits<a></p>
-         </li>
-         {{/each}}
-       </ul>
-     </script>
-    <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-    <script src="index.js"></script>
   </body>
 </html>
