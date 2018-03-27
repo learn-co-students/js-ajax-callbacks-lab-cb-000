@@ -20,6 +20,10 @@
   </head>
   <body>
     <main id="main">
+
+      <input id = 'searchTerms' />
+      <a href = '#' id = 'search-link'>Search Repositories</a>
+
       <div id="errors"></div>
     </main>
     <div class="flexbox-container">
@@ -32,7 +36,39 @@
         <div id="details"></div>
       </div>
     </div>
+    <script src="handlebars-latest.js"></script>
+    <script src = "http://requirejs.org/docs/release/2.2.0/minified/require.js"></script>
     <script src="jquery-3.1.0.min.js"></script>
     <script src="index.js"></script>
+
+    <!--templates-->
+    <script id = "repositories-template" type = 'text/x-handlebars-template'>
+      <ul style = "list-style-type: none; ">
+      {{#each this}}
+        <li style = "border: 1px solid black; padding: 5px;">
+          <img width = '60' height = 60 src = "{{owner.avatar_url}}"/>
+          <h3>{{name}}</h3><p>Created by: {{owner.login}}</p>
+          <h3>Description</h3>
+            {{description}}
+          <a href = "{{html_url}}">{{name}}</a>
+          <br>
+          <a href = "#" onclick = 'showCommits(this)' data-repository = "{{name}}" data-owner = "{{owner.login}}">show Commits</a>
+        <li>
+      {{/each }}
+       </ul>
+    </script>
+
+    <script id = "commits-template"  type = "text/x-handlebars-template">
+      <!--SHA, the author, the author's login, -->
+      <ul style = "list-style-type: none;">
+      {{#each this}}
+        <li style =  "border: 1px solid black; padding: 5px; ">
+          <p>SHA:          {{sha}}</p>
+          <p>Author login: {{author.login}}</p>
+          <p>Author Name:  {{commit.author.name}}</p>
+        </li>
+      {{/each}}
+      </ul>
+    </script>
   </body>
 </html>
