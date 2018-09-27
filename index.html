@@ -20,6 +20,8 @@
   </head>
   <body>
     <main id="main">
+      <input type="text" id="search"><br>
+      <a href="#" onclick="searchRepositories();return false">Search Repositories</a>
       <div id="errors"></div>
     </main>
     <div class="flexbox-container">
@@ -34,5 +36,8 @@
     </div>
     <script src="jquery-3.1.0.min.js"></script>
     <script src="index.js"></script>
+    <script type="text/javascript">
+      mocha.run()
+    </script>
   </body>
 </html>
