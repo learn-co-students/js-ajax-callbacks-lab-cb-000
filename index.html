@@ -21,6 +21,13 @@
   <body>
     <main id="main">
       <div id="errors"></div>
+      <div id="form">
+        <h2>Search GitHub Repos</h2>
+        <form>
+          <input type="text" id="searchTerms">
+        </form>
+        <a onclick="searchRepositories()" href="#">Search Repositories</a>
+      </div>
     </main>
     <div class="flexbox-container">
       <div>
@@ -34,5 +41,6 @@
     </div>
     <script src="jquery-3.1.0.min.js"></script>
     <script src="index.js"></script>
+    <script id="display-results-template" type="text/x-handlebars-template">
   </body>
 </html>
