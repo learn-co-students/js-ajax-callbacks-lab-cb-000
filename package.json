@@ -8,7 +8,7 @@
     "npm": "3.x"
   },
   "scripts": {
-    "test": "mocha -R mocha-multi --reporter-options nyan=-,json=.results.json"
+    "test": "mocha -R mocha-multi --timeout 5000 --reporter-options nyan=-,json=.results.json"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
     "jquery": "^3.1.0",
     "jsdom": "^9.4.1",
     "mocha": "^2.5.3",
-    "mocha-jsdom": "^1.1.0",
+    "mocha-jsdom": "~1.1.0",
     "mocha-multi": "^0.9.0",
     "sinon": "^1.17.4"
   }
