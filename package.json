@@ -4,7 +4,7 @@
   "description": "practice jquery ajax",
   "main": "index.js",
   "engines": {
-    "node": "6.x",
+    "node": "8.x",
     "npm": "3.x"
   },
   "scripts": {
