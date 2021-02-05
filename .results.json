@@ -1,0 +1,35 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 0,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-02-05T13:54:20.608Z",
+    "end": "2021-02-05T13:54:21.088Z",
+    "duration": 480
+  },
+  "tests": [],
+  "pending": [],
+  "failures": [
+    {
+      "title": "\"before all\" hook",
+      "fullTitle": "index.js \"before all\" hook",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {
+        "stack": "Error: Cannot find module 'jsdom/lib/old-api'\nRequire stack:\n- /mnt/c/Users/andre/Documents/Development/AndreaJasper/JavaScript/Remote APIs/js-ajax-callbacks-lab-cb-000/node_modules/mocha-jsdom/index.js\n- /mnt/c/Users/andre/Documents/Development/AndreaJasper/JavaScript/Remote APIs/js-ajax-callbacks-lab-cb-000/test/index-test.js\n    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:973:15)\n    at Function.Module._load (internal/modules/cjs/loader.js:855:27)\n    at Module.require (internal/modules/cjs/loader.js:1033:19)\n    at require (internal/modules/cjs/helpers.js:72:18)\n    at Context.<anonymous> (node_modules/mocha-jsdom/index.js:53:5)\n    at processImmediate (internal/timers.js:456:21)",
+        "message": "Cannot find module 'jsdom/lib/old-api'\nRequire stack:\n- /mnt/c/Users/andre/Documents/Development/AndreaJasper/JavaScript/Remote APIs/js-ajax-callbacks-lab-cb-000/node_modules/mocha-jsdom/index.js\n- /mnt/c/Users/andre/Documents/Development/AndreaJasper/JavaScript/Remote APIs/js-ajax-callbacks-lab-cb-000/test/index-test.js\n- /mnt/c/Users/andre/Documents/Development/AndreaJasper/JavaScript/Remote APIs/js-ajax-callbacks-lab-cb-000/node_modules/mocha/lib/mocha.js\n- /mnt/c/Users/andre/Documents/Development/AndreaJasper/JavaScript/Remote APIs/js-ajax-callbacks-lab-cb-000/node_modules/mocha/index.js\n- /mnt/c/Users/andre/Documents/Development/AndreaJasper/JavaScript/Remote APIs/js-ajax-callbacks-lab-cb-000/node_modules/mocha/bin/_mocha",
+        "code": "MODULE_NOT_FOUND",
+        "requireStack": [
+          "/mnt/c/Users/andre/Documents/Development/AndreaJasper/JavaScript/Remote APIs/js-ajax-callbacks-lab-cb-000/node_modules/mocha-jsdom/index.js",
+          "/mnt/c/Users/andre/Documents/Development/AndreaJasper/JavaScript/Remote APIs/js-ajax-callbacks-lab-cb-000/test/index-test.js",
+          "/mnt/c/Users/andre/Documents/Development/AndreaJasper/JavaScript/Remote APIs/js-ajax-callbacks-lab-cb-000/node_modules/mocha/lib/mocha.js",
+          "/mnt/c/Users/andre/Documents/Development/AndreaJasper/JavaScript/Remote APIs/js-ajax-callbacks-lab-cb-000/node_modules/mocha/index.js",
+          "/mnt/c/Users/andre/Documents/Development/AndreaJasper/JavaScript/Remote APIs/js-ajax-callbacks-lab-cb-000/node_modules/mocha/bin/_mocha"
+        ]
+      }
+    }
+  ],
+  "passes": []
+}
